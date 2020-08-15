@@ -1,0 +1,81 @@
+body {
+    background-image: url('../asset/images/bg1.jpg');
+    background-size: cover;
+}
+
+.header-bar {
+    background: #54585f7a;
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.game-name {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+.tbl-match {
+    text-align: center;
+}
+
+.tbl-match td {
+    vertical-align: middle;
+}
+
+.block1 {
+    color: white;
+    background: rgba(182, 38, 19, 0.781);
+    width: 35%;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.block2 {
+    color: white;
+    background: rgba(52, 17, 207, 0.705);
+    width: 35%;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opa-hover {
+    opacity: 0.5;
+    transition: 0.4s;
+}
+
+.opa-hover:hover {
+    opacity: 1;
+}
+
+.border-top {
+    padding: 5px 5px;
+    border-top: 2px solid rgb(20, 5, 5);
+}
+
+.opa-hover.active {
+    opacity: 1 !important;
+}
+
+.btn-betHistory {
+    margin: 10px 5px;
+}
+
+.header-history {
+    background: #54585f7a;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+}
+

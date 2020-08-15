@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script src="scriptjs/script.js"></script>
+    <title>index</title>
+</head>
+
+<body>
+    <header></header>
+
+    <article>
+        <div class="container">
+            <div class="game-name d-flex justify-content-between">
+                <h1>Rainbow League</h1>
+                <div>
+                    <a href="bethistory.html"><button class="btn btn-dark px-7 btn-betHistory">Bet History</button></a>
+                </div>
+            </div>
+            <div class="header-bar">
+                Game
+            </div>
+
+            <div class="game-name d-flex justify-content-between">
+                <div>Rainbow Six Siege</div>
+                <div id="btn-section">
+                    <button class="btn btn-danger px-3" onclick="ajaxListMatch('live')">Live</button>
+                    <button class="btn btn-outline-secondary px-3" onclick="ajaxListMatch('coming')">Upcoming</button>
+                    <button class="btn btn-outline-success px-3" onclick="ajaxListMatch('finished')">ResultMatch</button>
+                </div>
+            </div>
+
+            <table class="tbl-match table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="5">Extinction</th>
+                    </tr>
+                </thead>
+                <tbody id="list-match" class="table-secondary">
+                    <!-- <tr>
+                        <td>
+                            <div>teamNameA</div>
+                            <div>Score_home</div>
+                        </td>
+                        <td>
+                            <div>teamNameB</div>
+                            <div>Score_away</div>
+                        </td>
+                        <td>youtube</td>
+                        <td>twitch</td>
+                        <td>
+                            <button class="btn btn-primary">Choose Team</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </article>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-bet" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bet value</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-around" id="block-section">
+                        <div class="block1 flex-center flex-column opa-hover" name="team-select"
+                            onclick="selectTeam(this)">
+                            <div id="team_home">home</div>
+                            <div class="border-top">
+                                <input id="1" type="number" value="300" min="300" max="10000"
+                                    onchange="this.value = checkBetAmont(this.value)" class="form-control tbl-match"
+                                    placeholder="xxxx">
+                            </div>
+                        </div>
+                        <div class="block2 flex-center flex-column opa-hover" name="team-select"
+                            onclick="selectTeam(this)">
+                            <div id="team_away">away</div>
+                            <div class="border-top">
+                                <input id="2" type="number" value="300" min="300" max="10000"
+                                    onchange="this.value = checkBetAmont(this.value)" class="form-control tbl-match"
+                                    placeholder="xxxx">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="payment" type="button" class="btn btn-primary">Bet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(() => {
+        ajaxListMatch('live')
+    })
+</script>
